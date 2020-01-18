@@ -1,0 +1,9 @@
+#!/bin/bash
+
+docker run \
+    -d --name timescaledb \
+    -v "${PWD}/data:/var/lib/postgresql/data" \
+    -v "${PWD}/resource:/resource" \
+    -p 5432:5432 \
+    -e POSTGRES_PASSWORD=password \
+    timescale/timescaledb:latest-pg11
